@@ -1,0 +1,22 @@
+{
+  "name": "bb_todo",
+  "version": "0.0.0",
+  "homepage": "https://github.com/r3nya/bb_todo",
+  "authors": [
+    "Andrew M."
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "backbone": "~1.1.2"
+  }
+}
