@@ -1,0 +1,20 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="utf-8")
+        meta(name="description", content="")
+        title Todo
+
+    body
+        #todo
+
+        script#item-template(type="text/template").
+            <div>
+                <input id="todo_complete" type="checkbox" <%= completed ? 'checked="checked"' : '' %>>
+                <%- title %>
+            </div>
+
+        script(src="/components/jquery/dist/jquery.min.js")
+        script(src="/components/underscore/underscore-min.js")
+        script(src="/components/backbone/backbone.js")
+        script(src="/js/script.js")
