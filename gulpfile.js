@@ -6,7 +6,7 @@ var gulp         = require('gulp'),
     csso         = require('gulp-csso');
 
 gulp.task('templates', function () {
-    gulp.src('./*.jade')
+    gulp.src('./src/*.jade')
         .pipe(jade({
             locals: {}
         }))
@@ -14,7 +14,7 @@ gulp.task('templates', function () {
 });
 
 gulp.task('style', function () {
-    gulp.src('./style.styl')
+    gulp.src('./src/*.styl')
         .pipe(stylus())
         .pipe(sourcemaps.init())
         .pipe(csso())
@@ -23,15 +23,15 @@ gulp.task('style', function () {
 });
 
 gulp.task('js', function () {
-    gulp.src('script.js')
+    gulp.src('./src/*.js')
         .pipe(uglify())
         .pipe(gulp.dest('./public/js/'));
 });
 
 gulp.task('watch', function () {
-    gulp.watch('./*.jade',      ['templates']);
-    gulp.watch('./*.styl',      ['style']);
-    gulp.watch('./script.js',   ['js']);
+    gulp.watch('./src/*.jade',      ['templates']);
+    gulp.watch('./src/*.styl',      ['style']);
+    gulp.watch('./src/*.js',        ['js']);
 });
 
 gulp.task('build', ['templates', 'style', 'js']);
